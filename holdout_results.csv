@@ -1,0 +1,16 @@
+text,true_category,pred_category,confidence,true_priority,pred_priority
+I keep getting logged out whenever I try to access my profile. Can you fix this?,ACCOUNT,ACCOUNT,0.91,MEDIUM,LOW
+Someone is trying to access my account from an unknown device. Please secure it!,ACCOUNT,ACCOUNT,0.95,HIGH,LOW
+I changed my mind about purchasing this item. Is it possible to stop the order?,CANCEL,ORDER,0.89,LOW,LOW
+Your automated replies are not helping. I need to speak with an actual support agent.,CONTACT,CONTACT,0.65,MEDIUM,MEDIUM
+The delivery status says delivered but nothing has arrived at my doorstep.,DELIVERY,DELIVERY,0.51,MEDIUM,LOW
+Bhai parcel kab tak aayega? Tracking pichle 2 din se same hi hai.,DELIVERY,DELIVERY,0.26,MEDIUM,LOW
+Just wanted to appreciate your team for handling my complaint so patiently. Great experience!,FEEDBACK,FEEDBACK,1.0,LOW,LOW
+Could you provide a tax invoice for my recent purchase? I need it for reimbursement.,INVOICE,REFUND,0.76,LOW,MEDIUM
+I received the wrong colour of the product. I had ordered the black one.,ORDER,ORDER,0.7,MEDIUM,LOW
+Can I add one more item to an order that I placed this morning?,ORDER,ORDER,0.82,LOW,LOW
+The checkout page froze after I entered my card details. I am not sure whether the transaction went through.,PAYMENT,ACCOUNT,0.64,MEDIUM,LOW
+My card was charged three times for one purchase. Please look into this immediately.,PAYMENT,ACCOUNT,0.27,HIGH,MEDIUM
+I returned the shoes last week and the refund is still not credited to my account.,REFUND,REFUND,0.79,MEDIUM,HIGH
+I need to update the flat number in my shipping address before the package is dispatched.,SHIPPING,SHIPPING,1.0,MEDIUM,LOW
+I keep receiving promotional emails even though I unsubscribed. Please stop sending them.,SUBSCRIPTION,SUBSCRIPTION,0.97,LOW,MEDIUM

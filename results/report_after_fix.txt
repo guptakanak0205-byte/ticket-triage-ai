@@ -1,0 +1,56 @@
+﻿=== 1. CATEGORY (33 tickets) ===
+Accuracy: 0.848
+Macro F1: 0.813
+  English: 0.857 (28 tickets)
+  Hinglish: 0.800 (5 tickets)
+              precision    recall  f1-score   support
+
+     ACCOUNT       1.00      1.00      1.00         3
+      CANCEL       0.00      0.00      0.00         3
+     CONTACT       1.00      0.67      0.80         3
+    DELIVERY       1.00      1.00      1.00         3
+    FEEDBACK       0.75      1.00      0.86         3
+     INVOICE       1.00      1.00      1.00         3
+       ORDER       0.50      0.67      0.57         3
+     PAYMENT       1.00      1.00      1.00         3
+      REFUND       1.00      1.00      1.00         3
+    SHIPPING       0.75      1.00      0.86         3
+SUBSCRIPTION       0.75      1.00      0.86         3
+
+    accuracy                           0.85        33
+   macro avg       0.80      0.85      0.81        33
+weighted avg       0.80      0.85      0.81        33
+
+=== 2. CONFIDENCE THRESHOLD ===
+threshold  sent to AUTO  AUTO accuracy  wrong caught by human
+      0.3          100%            85%                    0/5
+      0.4           91%            87%                    1/5
+      0.5           88%            90%                    2/5
+      0.6           82%            89%                    2/5
+      0.7           82%            89%                    2/5
+      0.8           76%            88%                    2/5
+
+=== 3. PRIORITY ===
+Accuracy: 0.545
+HIGH tickets found: 3/5
+HIGH tickets predicted LOW (worst mistake): 1
+
+=== 4. RETRIEVAL (does a top-2 policy match the true category?) ===
+Hit rate: 25/30 = 83%
+
+=== 5. SPEED ===
+Average triage time: 53 ms per ticket
+
+=== CATEGORY MISTAKES ===
+  'I want to cancel my order because I accidentally selected the wrong product.'
+     true=CANCEL  predicted=ORDER  confidence=0.87
+  "Please cancel my subscription before the next billing cycle. I don't want to pay again."
+     true=CANCEL  predicted=SUBSCRIPTION  confidence=0.98
+  'I have contacted support twice to cancel my order but nobody has responded. This is really frustrating.'
+     true=CANCEL  predicted=ORDER  confidence=0.3
+  'Kisi real person se baat karni hai, chatbot meri problem solve nahi kar raha.'
+     true=CONTACT  predicted=FEEDBACK  confidence=0.44
+  'Please change the delivery address of my order. I entered the wrong address by mistake.'
+     true=ORDER  predicted=SHIPPING  confidence=0.96
+
+Saved evaluation_results.csv

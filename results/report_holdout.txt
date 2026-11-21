@@ -1,0 +1,53 @@
+﻿=== 1. CATEGORY (15 tickets) ===
+Accuracy: 0.733
+Macro F1: 0.648
+  English: 0.733 (15 tickets)
+              precision    recall  f1-score   support
+
+     ACCOUNT       0.50      1.00      0.67         2
+      CANCEL       0.00      0.00      0.00         1
+     CONTACT       1.00      1.00      1.00         1
+    DELIVERY       1.00      1.00      1.00         2
+    FEEDBACK       1.00      1.00      1.00         1
+     INVOICE       0.00      0.00      0.00         1
+       ORDER       0.67      1.00      0.80         2
+     PAYMENT       0.00      0.00      0.00         2
+      REFUND       0.50      1.00      0.67         1
+    SHIPPING       1.00      1.00      1.00         1
+SUBSCRIPTION       1.00      1.00      1.00         1
+
+    accuracy                           0.73        15
+   macro avg       0.61      0.73      0.65        15
+weighted avg       0.59      0.73      0.64        15
+
+=== 2. CONFIDENCE THRESHOLD ===
+threshold  sent to AUTO  AUTO accuracy  wrong caught by human
+      0.3           87%            77%                    1/4
+      0.4           87%            77%                    1/4
+      0.5           87%            77%                    1/4
+      0.6           80%            75%                    1/4
+      0.7           67%            80%                    2/4
+      0.8           47%            86%                    3/4
+
+=== 3. PRIORITY ===
+Accuracy: 0.267
+HIGH tickets found: 0/2
+HIGH tickets predicted LOW (worst mistake): 1
+
+=== 4. RETRIEVAL (does a top-2 policy match the true category?) ===
+Hit rate: 11/14 = 79%
+
+=== 5. SPEED ===
+Average triage time: 56 ms per ticket
+
+=== CATEGORY MISTAKES ===
+  'I changed my mind about purchasing this item. Is it possible to stop the order?'
+     true=CANCEL  predicted=ORDER  confidence=0.89
+  'Could you provide a tax invoice for my recent purchase? I need it for reimbursement.'
+     true=INVOICE  predicted=REFUND  confidence=0.76
+  'The checkout page froze after I entered my card details. I am not sure whether the transaction went through.'
+     true=PAYMENT  predicted=ACCOUNT  confidence=0.64
+  'My card was charged three times for one purchase. Please look into this immediately.'
+     true=PAYMENT  predicted=ACCOUNT  confidence=0.27
+
+Saved holdout_results.csv

@@ -1,0 +1,64 @@
+﻿=== 1. CATEGORY (33 tickets) ===
+Accuracy: 0.727
+Macro F1: 0.695
+  English: 0.714 (28 tickets)
+  Hinglish: 0.800 (5 tickets)
+              precision    recall  f1-score   support
+
+     ACCOUNT       0.60      1.00      0.75         3
+      CANCEL       0.00      0.00      0.00         3
+     CONTACT       0.75      1.00      0.86         3
+    DELIVERY       0.67      0.67      0.67         3
+    FEEDBACK       1.00      0.67      0.80         3
+     INVOICE       1.00      1.00      1.00         3
+       ORDER       0.40      0.67      0.50         3
+     PAYMENT       1.00      1.00      1.00         3
+      REFUND       1.00      1.00      1.00         3
+    SHIPPING       0.67      0.67      0.67         3
+SUBSCRIPTION       0.50      0.33      0.40         3
+
+    accuracy                           0.73        33
+   macro avg       0.69      0.73      0.69        33
+weighted avg       0.69      0.73      0.69        33
+
+=== 2. CONFIDENCE THRESHOLD ===
+threshold  sent to AUTO  AUTO accuracy  wrong caught by human
+      0.3           94%            77%                    2/9
+      0.4           91%            80%                    3/9
+      0.5           88%            83%                    4/9
+      0.6           73%            83%                    5/9
+      0.7           64%            86%                    6/9
+      0.8           61%            90%                    7/9
+
+=== 3. PRIORITY ===
+Accuracy: 0.545
+HIGH tickets found: 3/5
+HIGH tickets predicted LOW (worst mistake): 1
+
+=== 4. RETRIEVAL (does a top-2 policy match the true category?) ===
+Hit rate: 25/30 = 83%
+
+=== 5. SPEED ===
+Average triage time: 61 ms per ticket
+
+=== CATEGORY MISTAKES ===
+  'I want to cancel my order because I accidentally selected the wrong product.'
+     true=CANCEL  predicted=ORDER  confidence=0.89
+  "Please cancel my subscription before the next billing cycle. I don't want to pay again."
+     true=CANCEL  predicted=SUBSCRIPTION  confidence=0.24
+  'I have contacted support twice to cancel my order but nobody has responded. This is really frustrating.'
+     true=CANCEL  predicted=ORDER  confidence=0.46
+  'Delivery wala abhi tak nahi aaya, tracking mein bhi koi update nahi hai.'
+     true=DELIVERY  predicted=ORDER  confidence=0.37
+  'The customer service representative was very helpful and resolved my issue quickly.'
+     true=FEEDBACK  predicted=CONTACT  confidence=0.71
+  'Please change the delivery address of my order. I entered the wrong address by mistake.'
+     true=ORDER  predicted=SHIPPING  confidence=0.97
+  'Why are you charging so much for shipping when my order value is already high?'
+     true=SHIPPING  predicted=DELIVERY  confidence=0.51
+  'I cancelled my membership last month but you are still charging me every month.'
+     true=SUBSCRIPTION  predicted=ACCOUNT  confidence=0.21
+  'Can I change my current subscription plan to the premium one?'
+     true=SUBSCRIPTION  predicted=ACCOUNT  confidence=0.67
+
+Saved evaluation_results.csv
